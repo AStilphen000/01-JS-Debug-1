@@ -12,6 +12,9 @@
 
 /* global variables */
 var photoOrder = [1,2,3,4,5];
+var figureCount = 3;
+// var autoAdvance = setInterval(rightAdvance, 1000);
+
 
 /* shift all images one figure to the left, and change values in photoOrder array to match  */
 function rightArrow() {
@@ -47,6 +50,54 @@ function setUpPage() {
    createEventListeners();
    populateFigures();
 }
+
+function createEventListeners() {
+   var leftarrow = document.getElementById("leftarrow");
+   if (leftarrow.addEventListener) {
+       leftarrow.addEventListener("click", leftArrow, false);
+   } else if (leftarrow.attachEvent) {
+       leftarrow.attachEvent("onclick", leftArrow);
+   }
+   var rightarrow = document.getElementById("rightarrow");
+   if (rightarrow.addEventListener) {
+       rightarrow.addEventListener("click", rightArrow, false);
+   } else if (rightarrow.attachEvent) {
+       rightarrow.attachEvent("onclick", rightArrow);
+   }
+   // var mainFig = document.getElementsByTagName("img")[1];
+   // if (mainFig.addEventListener) {
+   //     mainFig.addEventListener("click", zoomFig, false);
+   // } else if (mainFig.attachEvent) {
+   //     mainFig.attachEvent("onclick", zoomFig);
+   // }
+   // var showAllButton = document.querySelector("#fiveButton p");
+   // if (showAllButton.addEventListener) {
+   //     showAllButton.addEventListener("click", previewFive, false);
+   // } else if (showAllButton.attachEvent) {
+   //     showAllButton.attachEvent("onclick", previewFive);
+   // }
+}
+
+function populateFigures() {
+   var filename;
+   var currentFig;
+   if (figureCount === 3) {
+       for (var i = 1; i < 4; i++) {
+           filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+           currentFig = document.getElementsByTagName("img")[i - 1];
+           currentFig.src = filename;
+       }
+   }
+   else {
+       for (var i = 0; i < 5; i++) {
+           filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+           currentFig = document.getElementsByTagName("img")[i];
+           currentFig.src = filename;
+       }
+   }
+}
+
+
 
 /* run setUpPage() function when page finishes loading */
 if (window.addEventListener) {
