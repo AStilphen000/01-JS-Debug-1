@@ -31,8 +31,29 @@ var monthsBox = document.forms[0].months;
 var acresBox = document.forms[0].acres;
 
 /* verify acres text box entry is a positive number */
-function verifyAcres() { 
-   testFormCompleteness();      
+function verifyAcres() {    
+   var validity = true;
+   var messageText = "";
+   try {
+      if (!(acresBox.value > 0)) {
+         throw "Please enter a number of acres greater than 0.";
+      }
+   }
+
+   catch (message) {
+      validity = false;
+      messageText = message;
+      // remove erroneous entry from input box 
+      acresBox.value = "";
+   }
+
+   finally {
+      // acresComplete = validity;
+      // remove former recommindation
+      messageElement.innerHTML = messageText;
+      messageHeadElement.innerHTML = "";
+      testFormCompleteness();
+   }
 }
 
 /* verify at least one crops checkbox is checked */
@@ -41,9 +62,29 @@ function verifyCrops() {
 }
 
 /* verify months text box entry is between 1 and 12 */
-function verifyMonths() {
-   testFormCompleteness();
-}
+   function verifyMonths() {
+      var validity = true; 
+      var messageText = "";
+      try {
+         if(!(monthsBox.value >= 1 && monthsBox.value <= 12))
+         throw "Please enter a number of months between 1 and 12.";
+      }
+
+      catch(message) {
+         validity = false; 
+         messageText = message;
+         // remove erroneous entry from input box
+         monthsBox.value = "";
+      }
+
+      finally {
+         monthsComplete = validity;
+         // remove former recommendation 
+         messageElement.innerHTML = messageText;
+         messageHeadElement.innerHTML = "";
+         testFormCompleteness();
+      }
+   }
 
 /* verify that a fuel option button is selected */
 function verifyFuel() {
