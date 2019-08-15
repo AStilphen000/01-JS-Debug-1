@@ -1,4 +1,5 @@
 Please describe in detail your feelings about where you currently are in JavaScript programming. Please include how well you feel that you have mastered it, as well as listing those things that you think are a challenge to you. Any feedback about whre you are, and where you think you need to go, or would like to go, will be very helpful in getting you there.
+- My feelings about where i currently am in JavaScript is alright, i'm not super confident about it but im not totally lost either. I really would love to learn how to efficently code. 
 
 Please describe in detail the types of "bugs" a coder can expect to encounter when coding a web page with JavaScript. Describe the techniques you have learned to resolve the types of bugs that we have examined so far. Quote an outside source containing information on resolving this type of bug.
 
