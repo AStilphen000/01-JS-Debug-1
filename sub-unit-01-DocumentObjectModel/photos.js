@@ -2,8 +2,8 @@
 
  *    Photo gallery
  *    Variables and functions
- *    Author: 
- *    Date:   
+ *    Author: Angelina Stilphen
+ *    Date:   8.15.19
 
  *    Filename: photos.js
  */
@@ -40,9 +40,24 @@ function leftArrow() {
    }
 }
 
+function previewFive() {
+   // alert("preview five images");
+   lastFigure.id = "fig5";
+   lastFigure.style.zIndex = "5";
+   lastFigure.style.position = "absolute";
+   lastFigure.style.right = "45px";
+   lastFigure.style.top = "67px";
+   var lastImage = document.createElement("img");
+   lastImage.width = "240";
+   lastImagine.height = "135";
+   var articleElem = document.getElementsByTagName("article")[0];
+   // alert(articleElem);
+   lastFigure.appendChild(lastImage);
+}
+
 /* open center figure in separate window */
 function zoomFig() {
-   
+   alert("center image clicked");
 }
 
 /* create event listeners and populate image elements */
@@ -64,18 +79,18 @@ function createEventListeners() {
    } else if (rightarrow.attachEvent) {
        rightarrow.attachEvent("onclick", rightArrow);
    }
-   // var mainFig = document.getElementsByTagName("img")[1];
-   // if (mainFig.addEventListener) {
-   //     mainFig.addEventListener("click", zoomFig, false);
-   // } else if (mainFig.attachEvent) {
-   //     mainFig.attachEvent("onclick", zoomFig);
-   // }
-   // var showAllButton = document.querySelector("#fiveButton p");
-   // if (showAllButton.addEventListener) {
-   //     showAllButton.addEventListener("click", previewFive, false);
-   // } else if (showAllButton.attachEvent) {
-   //     showAllButton.attachEvent("onclick", previewFive);
-   // }
+   var mainFig = document.getElementsByTagName("img")[1];
+   if (mainFig.addEventListener) {
+       mainFig.addEventListener("click", zoomFig, false);
+   } else if (mainFig.attachEvent) {
+       mainFig.attachEvent("onclick", zoomFig);
+   }
+   var showAllButton = document.querySelector("#fiveButton p");
+   if (showAllButton.addEventListener) {
+       showAllButton.addEventListener("click", previewFive, false);
+   } else if (showAllButton.attachEvent) {
+       showAllButton.attachEvent("onclick", previewFive);
+   }
 }
 
 function populateFigures() {
