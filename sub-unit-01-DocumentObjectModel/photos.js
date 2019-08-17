@@ -49,10 +49,16 @@ function previewFive() {
    lastFigure.style.top = "67px";
    var lastImage = document.createElement("img");
    lastImage.width = "240";
-   lastImagine.height = "135";
+   lastImage.height = "135";
    var articleElem = document.getElementsByTagName("article")[0];
    // alert(articleElem);
-   lastFigure.appendChild(lastImage);
+   lastFigure.appendChild(lastImage); 
+   articleElem.appendChild(lastFigure);
+   var firstFigure = firstFigure.cloneNode(ture);
+   firsstFigure.id = "fig1";
+   firstFigure.style.right = "";
+   firstFigure.style.left = "45px";
+   articleElem.appendChild(firstFigure);
 }
 
 /* open center figure in separate window */
