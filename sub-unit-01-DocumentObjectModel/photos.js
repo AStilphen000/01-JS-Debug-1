@@ -49,9 +49,10 @@ function previewFive() {
    lastFigure.style.top = "67px";
    var lastImage = document.createElement("img");
    lastImage.width = "240";
-   lastImagine.height = "135";
+   lastImage.height = "135";
    var articleElem = document.getElementsByTagName("article")[0];
    // alert(articleElem);
+<<<<<<< HEAD
    lastFigure.appendChild(lastImage);
    // articleElem.appendchild(lastFigure);
    articleElem.insertBefore(lastFigure, document.getElementById("rightarrow"));
@@ -74,6 +75,15 @@ function previewFive() {
        numberButton.detachEvent("onclick", previewFive);
        numberButton.attachEvent("onclick", previewThree);
    }
+=======
+   lastFigure.appendChild(lastImage); 
+   articleElem.appendChild(lastFigure);
+   var firstFigure = firstFigure.cloneNode(ture);
+   firsstFigure.id = "fig1";
+   firstFigure.style.right = "";
+   firstFigure.style.left = "45px";
+   articleElem.appendChild(firstFigure);
+>>>>>>> master
 }
 
 /* open center figure in separate window */
